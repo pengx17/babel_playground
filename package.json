@@ -1,0 +1,19 @@
+{
+  "name": "babel-playground",
+  "version": "1.0.0",
+  "description": "Babel playground for testing ES6 features.",
+  "main": "index.js",
+  "author": "pengx17",
+  "license": "ISC",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "babel-plugin-syntax-async-functions": "^6.3.13",
+    "babel-plugin-transform-async-to-generator": "^6.4.0",
+    "babel-plugin-transform-runtime": "^6.4.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-3": "^6.3.13",
+    "babel-register": "^6.3.13"
+  }
+}
