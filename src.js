@@ -20,4 +20,40 @@ const parallel = async () => {
   console.log("parallel done");
 }
 
-parallel();
+//parallel();
+
+//////
+
+// Verify when exception can be caught in an async function
+function testExceptions() {
+  async function foo() {
+    throw 'some error';
+  }
+
+  // This does not catch exception:
+  try {
+    foo();
+  } catch(e) {
+    console.log("normal try/catch" + e);
+  }
+
+  // This does not catch the exception
+  (async () => {
+    try {
+      foo();
+    } catch(e) {
+      console.log("async try/catch without await" + e);
+    }
+  })();
+
+  // This does catch the exception
+  (async () => {
+    try {
+      await foo();
+    } catch(e) {
+      console.log("async try/catch with await" + e);
+    }
+  })();
+}
+
+testExceptions();
